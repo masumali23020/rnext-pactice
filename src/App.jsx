@@ -1,15 +1,17 @@
-import './App.css'
-import Coments from './coments/Coments'
+import { useState } from "react";
+import Playground from "./coments/PlayGround";
 
-function App() {
- 
 
-  return (
-    <>
-    
-      <Coments postId="1" />
-    </>
-  )
+export default function App() {
+    const [show, setShow] = useState(false);
+
+    return (
+        <>
+            <button onClick={() => setShow(!show)}>
+                {show ? "Unmount" : "Mount"} the component
+            </button>
+            {show && <hr />}
+            {show && <Playground/>}
+        </>
+    );
 }
-
-export default App
