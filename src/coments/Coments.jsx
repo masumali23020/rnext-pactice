@@ -13,7 +13,6 @@ const Coments = ({postId}) => {
             console.log("fatching....")
             const json  = await fetchComents(postId)
             if(!ignore){
-                console.log("setting....")
 
                 setComents(json)
             }
